@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Companion Remote privacy policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --ground: #E9E7E2;
+    --ink: #212226;
+    --muted: #55565b;
+    --rule: #cfccc5;
+    --signal: #2F5DE0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #17181A;
+      --ink: #E9E7E2;
+      --muted: #a8a9ad;
+      --rule: #31333A;
+      --signal: #8AA9F5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding-block: 40px;
+    padding-inline: 20px;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.2rem; line-height: 1.3; margin: 2.4rem 0 .6rem; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  p, li { color: var(--ink); }
+  .lede { color: var(--muted); margin: 0 0 2rem; }
+  a { color: var(--signal); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; }
+  .note { color: var(--muted); font-size: .92rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Companion Remote privacy policy</h1>
+<p class="lede">Last updated 19 September 2026, for version 1.0.0.</p>
+
+<p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
+this policy. Contact details are at the end of this page.</p>
+
+<p>Companion Remote controls your Apple TV over your local network. The app contains
+no adverts, no analytics, no tracking and no crash-reporting service. It does not
+require a Companion Remote account, and there is no Companion Remote server: the
+app has no developer backend of any kind.</p>
+
+<h2>Information the app uses</h2>
+
+<p>The app looks for compatible devices on your local network. It reads their
+advertised names, network addresses and service information so you can choose a
+television and connect to it.</p>
+
+<p>When you pair, the app uses the PIN shown by your Apple TV to establish pairing
+credentials. It saves those credentials, the television's name and its last known
+local address in app-private storage on your Android device. <strong>The PIN itself
+is not saved.</strong> Pairing credentials let the app reconnect without asking you
+to pair each time. Your selected remote mode, your Settings choices and the last
+connected television are also saved locally.</p>
+
+<p>Remote commands and text you choose to send travel directly to your paired Apple TV
+over encrypted connections. The app can receive the television's app list, focused
+text-field content, playback state and any media details the television makes
+available. This is used to display and operate the remote. The app does not save a
+viewing history or a history of text you send.</p>
+
+<h3>Typing on the television</h3>
+
+<p>When Synchronise text input is on, the app reads the text already in the
+television's focused field so you can edit it, and each change you make is sent as
+you type. A field the television marks as secure is never read back or shown, and
+what you type into it stays in memory only while the field is selected. The app does
+not save or record text in either case.</p>
+
+<h3>The Now Playing notification</h3>
+
+<p>When Show Now Playing notification is on and you have allowed notifications,
+leaving the app while your television plays keeps the connection open and shows what
+is playing, with its controls, in a notification. The picture it shows is requested
+from the television over the same local connection and held in memory only; the app
+does not download artwork from the internet. The connection and the notification end
+when playback stops or stays paused for five minutes, when the connection closes,
+when you dismiss the notification, when you return to the app, or when you turn the
+setting off. Your Android lock screen settings decide whether the details appear on
+the lock screen.</p>
+
+<p>These connections stay on your local network. The app restricts them to local
+addresses in code: a television at a public internet address is refused rather than
+contacted. Local discovery and network addressing remain visible to equipment on
+your network, as they are for any device that advertises itself there; that is not
+the same as the encrypted remote-control session.</p>
+
+<h2>How pairing credentials are protected</h2>
+
+<p>Saved pairing credentials are encrypted with a key held in the Android Keystore
+on your device. The key does not leave the device and cannot be extracted by the
+app. Credentials saved by an earlier version of the app were stored unencrypted;
+the first time this version opens, it encrypts them, verifies that it can read them
+back correctly, and only then removes the unencrypted copy.</p>
+
+<p>Encrypted material is bound to the entry it belongs to, so a credential copied
+out of the app's storage into another entry cannot be decrypted there.</p>
+
+<p>The app disables Android backup and excludes both pairing stores from Android
+cloud backup and device transfer, so credentials are not copied to another device.
+Protect your phone with its screen lock and keep Android updated.</p>
+
+<h2>Optional catalogue search</h2>
+
+<p class="note">Catalogue attribution: JustWatch. Streaming availability information
+is provided by Streaming Availability API by Movie of the Night.</p>
+
+<p>Search is optional and requires internet access. Remote control does not use it
+and continues to work on the local network alone. Nothing leaves your device for a
+catalogue unless you submit a search.</p>
+
+<p>When you submit a film or series search, the app sends your query, the selected
+country and, where supported, the selected streaming-service filters over HTTPS to
+JustWatch at <code>apis.justwatch.com</code>. Filters come from the supported apps on
+the selected television and from your choices.</p>
+
+<p>Automatic country selection uses the mobile network's country, then the SIM
+provider's country, then the phone's region setting. If none is available it uses
+South Africa and says so. A country you choose overrides automatic selection. No
+location permission, phone identifier or external IP-location service is used.</p>
+
+<h3>Your own Movie of the Night key</h3>
+
+<p>You can optionally enter your own Movie of the Night API key in Search settings.
+With a key saved, searches and country-coverage requests go to
+<code>api.movieofthenight.com</code> instead. The key is sent only to that service, in
+a request header. Its account, plan and quota apply separately. A key is not
+required in order to search.</p>
+
+<h3>Disney+ in South Africa</h3>
+
+<p>Submitting a search with Disney+ selected in South Africa downloads its public
+regional catalogue from <code>www.apps.disneyplus.com</code> over HTTPS.
+<strong>Your search text is not sent to Disney</strong>, and neither is any API key:
+the app downloads a fixed public catalogue file and matches titles on the phone.
+Disney receives the request, and therefore your internet address, and nothing else.
+The catalogue is held in memory for up to six hours and refreshed only by a later
+submitted search. No Disney login, cookie or tracking code is involved.</p>
+
+<p>In other countries, wider Disney discovery is on by default and can be switched
+off in Search settings. Where the main catalogue lacks Disney+ coverage, discovery
+sends the query to JustWatch against the US catalogue, without any API key. Those
+results say which catalogue they came from and do not confirm local availability.
+Your selected country is not changed.</p>
+
+<h3>What the catalogue provider receives, and what it never receives</h3>
+
+<p>The selected provider receives your internet address as part of the connection
+and handles the request under its own privacy practices. Companion Remote does not
+control any provider's server logs or retention.</p>
+
+<p>The app sends no pairing credentials, no television name or address, no app
+inventory, no playback history and no advertising identifier to any catalogue.
+Results stay in memory. The app saves no search history and downloads no catalogue
+images. Redirects are refused on every internet request, so no host other than
+those named above is contacted.</p>
+
+<h3>Opening a result</h3>
+
+<p>Opening a result sends its content link to the selected television and may start
+playback. A published Apple TV or regional playback link is preferred where one is
+available and valid. Known campaign and referral fields are removed from the link;
+content identifiers and Netflix's fixed entry-point value
+(<code>source=topshelf</code>) are kept. That value does not identify you or your
+device. The streaming app handles access and playback under its own practices.
+Launch status and any error code stay in memory and are not saved or sent anywhere.</p>
+
+<p>Tapping a catalogue attribution opens that provider's site in your browser, where
+its own privacy practices apply. The app embeds no browser and no tracking code.</p>
+
+<h2>Optional Plex search on your own server</h2>
+
+<p>Plex search needs a server URL and token that you supply. Save and test connects
+directly to that server, checks authorised library access and saves its identity.
+The server address must resolve to your local network; every address the name
+resolves to is checked, and the app does not use Plex cloud discovery or relay
+services. Searches send the query and the token only to that server, with the token
+in a header.</p>
+
+<p>An <code>https://</code> URL uses normal certificate and hostname verification.
+An <code>http://</code> URL sends the request without transport encryption on your
+local network, which is a choice you make by entering that URL. Redirects are not
+followed.</p>
+
+<p>Plex-only searches contact no public catalogue. Selecting Plex together with
+streaming services sends the query separately to each source. Returned Plex titles
+and item identifiers stay in memory. A Plex link sent to the television contains the
+server and library item identifiers and never the token; the Plex app on the
+television uses its own existing access.</p>
+
+<p>Your Plex token is encrypted with an Android Keystore key and excluded from backup
+and device transfer. The server URL, its name and the per-television Infuse setting
+are saved privately on the phone. Removing the Plex server in Search settings
+deletes its saved credentials, URL and name from the phone. That does not revoke the
+token at Plex; use Plex's own account controls to revoke it.</p>
+
+<p>Infuse lookup is unavailable in this version. Its settings are retained for
+possible future work, and Search cannot enable it or send Infuse links.</p>
+
+<h2>The diagnostic record</h2>
+
+<p>The app can keep a short record of what it did, to help explain a problem. It is
+<strong>off until you switch it on</strong> in Help and privacy, keeps nothing while
+it is off, holds only a limited number of recent entries, and is emptied when you
+clear it or switch it off.</p>
+
+<p>The record never leaves your device on its own. If you copy it and send it to
+someone, that is your choice and your copy. It is written so that it carries no PIN,
+key, token, credential, password or search text, and that is enforced by an
+automated check on every build.</p>
+
+<h2>Storage and deletion</h2>
+
+<p>Everything the app keeps is on your phone. There is no server-side copy to request
+deletion of, because there is no server.</p>
+
+<ul>
+  <li><strong>Forget a television</strong> to remove its saved remote and media
+      pairings from this phone.</li>
+  <li><strong>Remove a saved key or Plex server</strong> in Search settings to delete
+      it from the phone.</li>
+  <li><strong>Clear the app's storage</strong> in Android settings, or
+      <strong>uninstall</strong> the app, to remove everything at once.</li>
+</ul>
+
+<p>Forgetting a television does not remove the matching pairing entry held by the
+Apple TV itself. Use the Apple TV's own settings if you want to revoke access there
+as well. Removing an API key or Plex token here does not revoke it at the provider;
+use that provider's account settings.</p>
+
+<p>Requests already made to a catalogue provider, purchase records held by Google
+Play, and any support correspondence are held by those parties under their own
+processes.</p>
+
+<h2>Permissions</h2>
+
+<p>The app requests six permissions, and no others:</p>
+
+<ul>
+  <li><code>INTERNET</code>, for the connection to your television and for optional
+      catalogue search.</li>
+  <li><code>ACCESS_NETWORK_STATE</code>, to notice when the network returns so the
+      remote can reconnect promptly.</li>
+  <li><code>CHANGE_WIFI_MULTICAST_STATE</code>, so local discovery can receive the
+      multicast replies that televisions answer with.</li>
+  <li><code>POST_NOTIFICATIONS</code>, to show the Now Playing notification. Android
+      asks you first, and the app asks only when you tap Allow notifications.</li>
+  <li><code>FOREGROUND_SERVICE</code> and
+      <code>FOREGROUND_SERVICE_CONNECTED_DEVICE</code>, to keep the connection to
+      your television open while the Now Playing notification is showing, and only
+      then.</li>
+</ul>
+
+<p>The app does not access your microphone, camera, contacts, location, files or
+phone identifiers.</p>
+
+<h2>Other software and services</h2>
+
+<p>Your chosen Android keyboard handles text entry under its own settings and privacy
+practices. The television, and the apps running on it, handle the commands and text
+they receive under theirs.</p>
+
+<p>Google Play handles the app's purchase and distribution separately from the
+remote's local connections. Companion Remote contains no payment code and never
+receives payment-card details.</p>
+
+<h2>Children</h2>
+
+<p>The app is a remote control for a television. It is not directed at children, has
+no social, messaging or user-generated-content feature, and collects nothing that
+identifies a user.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If this policy changes, the date at the top changes with it. A copy of the policy
+is also bundled inside the app under Help and privacy, so it can be read without an
+internet connection. Where the two differ, this page is the current one.</p>
+
+<h2>Third party names</h2>
+
+<p>Apple, Apple TV, Disney+, Netflix, Prime Video, Plex, DStv, Infuse and Crunchyroll
+are third party names used descriptively as text. No provider logo, wordmark artwork
+or brand colour is used.</p>
+
+<p>Apple and Apple TV are trademarks of Apple Inc., registered in the U.S. and other
+countries and regions. Companion Remote is not affiliated with, endorsed by,
+sponsored by or otherwise approved by Apple Inc. Android and Google Play are
+trademarks of Google LLC. Netflix is a registered trademark of Netflix, Inc.</p>
+
+<hr>
+
+<h2>Contact</h2>
+
+<p>Companion Remote is published by <strong>PGH Holdings (Pty) Ltd</strong>. For
+questions about this policy or about the app, email
+<a href="mailto:pgh-holdings-apps@proton.me">pgh-holdings-apps@proton.me</a>.</p>
+
+<p>The app itself sends nothing to PGH Holdings. If you email, your message is used
+to answer you. Please do not send pairing codes, keys, tokens or a full log; they are
+never needed.</p>
+
+<footer>
+  Companion Remote 1.0.0. Published by PGH Holdings (Pty) Ltd.
+</footer>
+
+</main>
+</body>
+</html>
