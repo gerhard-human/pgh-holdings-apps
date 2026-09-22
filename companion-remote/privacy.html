@@ -50,7 +50,7 @@
 <main>
 
 <h1>Companion Remote privacy policy</h1>
-<p class="lede">Last updated 19 September 2026, for version 1.0.0.</p>
+<p class="lede">Last updated 21 September 2026, for version 1.0.0.</p>
 
 <p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
 this policy. Contact details are at the end of this page.</p>
@@ -67,7 +67,9 @@ advertised names, network addresses and service information so you can choose a
 television and connect to it.</p>
 
 <p>When you pair, the app uses the PIN shown by your Apple TV to establish pairing
-credentials. It saves those credentials, the television's name and its last known
+credentials. It gives the television a name for the pairing that contains your phone's
+model, so the pairing can be identified in the Apple TV's settings and removed there.
+It saves those credentials, the television's name and its last known
 local address in app-private storage on your Android device. <strong>The PIN itself
 is not saved.</strong> Pairing credentials let the app reconnect without asking you
 to pair each time. Your selected remote mode, your Settings choices and the last
@@ -95,8 +97,10 @@ is playing, with its controls, in a notification. The picture it shows is reques
 from the television over the same local connection and held in memory only; the app
 does not download artwork from the internet. The connection and the notification end
 when playback stops or stays paused for five minutes, when the connection closes,
-when you dismiss the notification, when you return to the app, or when you turn the
-setting off.</p>
+when you return to the app, when you close the app from your phone's recent apps, or
+when you turn the setting off. Dismissing the notification ends them too, on a phone
+that lets you dismiss it: some do not allow a notification like this to be swiped
+away, and on those the actions above are how you end it.</p>
 
 <p>On the lock screen, Android shows what is playing in its media player. That player
 follows Android's media settings, not the setting that hides notification content, so
@@ -126,46 +130,55 @@ Protect your phone with its screen lock and keep Android updated.</p>
 
 <h2>Optional catalogue search</h2>
 
-<p class="note">Catalogue attribution: JustWatch. Streaming availability information
-is provided by Streaming Availability API by Movie of the Night.</p>
+<p class="note">Streaming availability information is provided by Streaming
+Availability API by Movie of the Night.</p>
 
 <p>Search is optional and requires internet access. Remote control does not use it
 and continues to work on the local network alone. Nothing leaves your device for a
 catalogue unless you submit a search.</p>
 
-<p>When you submit a film or series search, the app sends your query, the selected
-country and, where supported, the selected streaming-service filters over HTTPS to
-JustWatch at <code>apis.justwatch.com</code>. Filters come from the supported apps on
-the selected television and from your choices.</p>
-
-<p>Automatic country selection uses the mobile network's country, then the SIM
-provider's country, then the phone's region setting. If none is available it uses
-South Africa and says so. A country you choose overrides automatic selection. No
-location permission, phone identifier or external IP-location service is used.</p>
+<p>This app carries no catalogue of its own and has no developer-operated catalogue
+service. A catalogue search happens only after you enter your own Movie of the
+Night API key in Search settings. Without a key it searches no catalogue at all,
+and the search panel says so.</p>
 
 <h3>Your own Movie of the Night key</h3>
 
-<p>You can optionally enter your own Movie of the Night API key in Search settings.
-With a key saved, searches and country-coverage requests go to
-<code>api.movieofthenight.com</code> instead. The key is sent only to that service, in
-a request header. Its account, plan and quota apply separately. A key is not
-required in order to search.</p>
+<p>With a key saved, your query and selected country go over HTTPS to
+<code>api.movieofthenight.com</code>, and nothing else about your television. The
+key is sent only to that service, in a request header. Its account, plan and quota
+apply separately.</p>
 
-<h3>Disney+ in South Africa</h3>
+<p>Automatic country selection uses the phone's region setting. If that is not a
+country, no country is chosen for you: catalogue searches are not sent until you
+pick one on the search panel, and the panel says so. Sending a title to your
+television's own Search needs no country and still works. A country you choose on
+the search panel overrides automatic selection. The mobile network's country and the SIM's country
+are not read. No location permission, phone identifier or external IP-location
+service is used.</p>
 
-<p>Submitting a search with Disney+ selected in South Africa downloads its public
-regional catalogue from <code>www.apps.disneyplus.com</code> over HTTPS.
-<strong>Your search text is not sent to Disney</strong>, and neither is any API key:
-the app downloads a fixed public catalogue file and matches titles on the phone.
-Disney receives the request, and therefore your internet address, and nothing else.
-The catalogue is held in memory for up to six hours and refreshed only by a later
-submitted search. No Disney login, cookie or tracking code is involved.</p>
+<h3>One search can make a second request, with a different country</h3>
 
-<p>In other countries, wider Disney discovery is on by default and can be switched
-off in Search settings. Where the main catalogue lacks Disney+ coverage, discovery
-sends the query to JustWatch against the US catalogue, without any API key. Those
-results say which catalogue they came from and do not confirm local availability.
-Your selected country is not changed.</p>
+<p>When the catalogue has no Disney+ for your selected country, and Wider Disney
+discovery is on, which is its default, the app sends your query once more to the
+same service, with the same key, and the country <code>GB</code> in place of
+yours. It does this so it can tell you whether the title is on the international
+Disney+, which most countries outside the United States share.</p>
+
+<p><strong>That second request carries nothing about you or your television that
+the first did not</strong>, and the country in it is a fixed value rather than
+your own. Results found this way are labelled in the app as coming from another
+country's catalogue and are not verified for yours. Turning Wider Disney
+discovery off in Search settings stops the second request being made at all.</p>
+
+<h3>What your television has is decided on the phone</h3>
+
+<p>Which services a search offers, and which results it shows, are decided on the
+phone from the list of applications your television reports. <strong>That list, and
+anything derived from it, is never sent to a catalogue.</strong> No request carries
+it, or a filter built from it, so a catalogue is not told what you have installed.
+Results for applications your television does not have are removed on the phone,
+after the reply arrives.</p>
 
 <h3>What the catalogue provider receives, and what it never receives</h3>
 
@@ -213,13 +226,12 @@ server and library item identifiers and never the token; the Plex app on the
 television uses its own existing access.</p>
 
 <p>Your Plex token is encrypted with an Android Keystore key and excluded from backup
-and device transfer. The server URL, its name and the per-television Infuse setting
-are saved privately on the phone. Removing the Plex server in Search settings
+and device transfer. The server URL and its name are saved privately on the phone. Removing the Plex server in Search settings
 deletes its saved credentials, URL and name from the phone. That does not revoke the
 token at Plex; use Plex's own account controls to revoke it.</p>
 
-<p>Infuse lookup is unavailable in this version. Its settings are retained for
-possible future work, and Search cannot enable it or send Infuse links.</p>
+<p>Infuse lookup is not part of this version. Search sends no Infuse links, and the
+app keeps no Infuse setting.</p>
 
 <h2>The diagnostic record</h2>
 
@@ -258,7 +270,7 @@ processes.</p>
 
 <h2>Permissions</h2>
 
-<p>The app requests six permissions, and no others:</p>
+<p>The app requests these six permissions:</p>
 
 <ul>
   <li><code>INTERNET</code>, for the connection to your television and for optional
@@ -274,6 +286,12 @@ processes.</p>
       your television open while the Now Playing notification is showing, and only
       then.</li>
 </ul>
+
+<p>Android's support library adds a seventh, which the app declares and holds itself:
+<code>com.pghholdings.companionremote.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>.
+Only an app signed with the same key can hold it, and it exists so that the app's
+own internal receivers accept messages from the app alone. It gives the app no
+access to anything.</p>
 
 <p>The app does not access your microphone, camera, contacts, location, files or
 phone identifiers.</p>
