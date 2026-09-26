@@ -50,7 +50,7 @@
 <main>
 
 <h1>Companion Remote privacy policy</h1>
-<p class="lede">Last updated 21 September 2026, for version 1.0.0.</p>
+<p class="lede">Last updated 26 September 2026, for version 1.0.0.</p>
 
 <p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
 this policy. Contact details are at the end of this page.</p>
@@ -80,6 +80,13 @@ over encrypted connections. The app can receive the television's app list, focus
 text-field content, playback state and any media details the television makes
 available. This is used to display and operate the remote. The app does not save a
 viewing history or a history of text you send.</p>
+
+<p>After a successful app launch, the app saves that app's identifier in a bounded
+list of recently used apps for the selected television. This list stays in
+app-private storage on the phone and is not sent to the developer or a catalogue.
+Choose Clear recent apps in Apps to erase it, or Forget the television to erase
+its list and saved pairing from the phone. Clearing Android app storage or
+uninstalling also erases all local recent-app lists.</p>
 
 <h3>Typing on the television</h3>
 
@@ -192,6 +199,11 @@ Results stay in memory. The app saves no search history and downloads no catalog
 images. Redirects are refused on every internet request, so no host other than
 those named above is contacted.</p>
 
+<p>The API key is issued to a provider account and may identify that account to
+the provider. The provider may infer an approximate location from the internet
+address it receives; a country preference is not a GPS reading. Ask the
+provider about its own records, retention and deletion.</p>
+
 <h3>Opening a result</h3>
 
 <p>Opening a result sends its content link to the selected television and may start
@@ -218,6 +230,11 @@ in a header.</p>
 An <code>http://</code> URL sends the request without transport encryption on your
 local network, which is a choice you make by entering that URL. Redirects are not
 followed.</p>
+
+<p>The token can identify a Plex account or server user to the configured server.
+The owner of that server controls its request logs and their retention. With
+HTTP, the query and token travel without transport encryption on the local
+network.</p>
 
 <p>Plex-only searches contact no public catalogue. Selecting Plex together with
 streaming services sends the query separately to each source. Returned Plex titles
@@ -308,9 +325,10 @@ receives payment-card details.</p>
 
 <h2>Children</h2>
 
-<p>The app is a remote control for a television. It is not directed at children, has
-no social, messaging or user-generated-content feature, and collects nothing that
-identifies a user.</p>
+<p>The app is a remote control for a television and is not directed at children.
+It has no social, messaging or user-generated-content feature. An optional API
+key or Plex token may identify a provider account to that provider; an internet
+host may infer location from the connecting address.</p>
 
 <h2>Changes to this policy</h2>
 
