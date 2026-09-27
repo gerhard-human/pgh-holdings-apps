@@ -50,7 +50,7 @@
 <main>
 
 <h1>Companion Remote privacy policy</h1>
-<p class="lede">Last updated 26 September 2026, for version 1.0.0.</p>
+<p class="lede">Last updated 27 September 2026, for version 1.0.0.</p>
 
 <p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
 this policy. Contact details are at the end of this page.</p>
@@ -219,22 +219,19 @@ its own privacy practices apply. The app embeds no browser and no tracking code.
 
 <h2>Optional Plex search on your own server</h2>
 
-<p>Plex search needs a server URL and token that you supply. Save and test connects
+<p>Plex search needs the server's HTTPS address and a token that you supply. Save and test connects
 directly to that server, checks authorised library access and saves its identity.
 The server address must resolve to your local network; every address the name
 resolves to is checked, and the app does not use Plex cloud discovery or relay
 services. Searches send the query and the token only to that server, with the token
 in a header.</p>
 
-<p>An <code>https://</code> URL uses normal certificate and hostname verification.
-An <code>http://</code> URL sends the request without transport encryption on your
-local network, which is a choice you make by entering that URL. Redirects are not
+<p>Requests use HTTPS with normal certificate and hostname verification. An address
+beginning <code>http://</code> is refused and never contacted. Redirects are not
 followed.</p>
 
 <p>The token can identify a Plex account or server user to the configured server.
-The owner of that server controls its request logs and their retention. With
-HTTP, the query and token travel without transport encryption on the local
-network.</p>
+The owner of that server controls its request logs and their retention.</p>
 
 <p>Plex-only searches contact no public catalogue. Selecting Plex together with
 streaming services sends the query separately to each source. Returned Plex titles
@@ -246,9 +243,6 @@ television uses its own existing access.</p>
 and device transfer. The server URL and its name are saved privately on the phone. Removing the Plex server in Search settings
 deletes its saved credentials, URL and name from the phone. That does not revoke the
 token at Plex; use Plex's own account controls to revoke it.</p>
-
-<p>Infuse lookup is not part of this version. Search sends no Infuse links, and the
-app keeps no Infuse setting.</p>
 
 <h2>The diagnostic record</h2>
 
@@ -310,8 +304,10 @@ Only an app signed with the same key can hold it, and it exists so that the app'
 own internal receivers accept messages from the app alone. It gives the app no
 access to anything.</p>
 
-<p>The app does not access your microphone, camera, contacts, location, files or
-phone identifiers.</p>
+<p>The app does not access your microphone, camera, contacts, files or phone
+identifiers. The app does not request Android location permission or read GPS
+location. An optional catalogue provider receives your internet address and may
+infer an approximate location from it.</p>
 
 <h2>Other software and services</h2>
 
@@ -338,8 +334,8 @@ internet connection. Where the two differ, this page is the current one.</p>
 
 <h2>Third party names</h2>
 
-<p>Disney+, Netflix, Prime Video, Plex, DStv, Infuse and Crunchyroll are third party
-names used descriptively as text. No provider logo, wordmark artwork or brand colour
+<p>Disney+, Netflix, Prime Video, Plex, DStv and Crunchyroll are third party names
+used descriptively as text. No provider logo, wordmark artwork or brand colour
 is used.</p>
 
 <p>Companion Remote is an independent app and is not affiliated with, sponsored by or
