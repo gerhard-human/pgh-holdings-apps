@@ -219,16 +219,20 @@ its own privacy practices apply. The app embeds no browser and no tracking code.
 
 <h2>Optional Plex search on your own server</h2>
 
-<p>Plex search needs the server's HTTPS address and a token that you supply. Save and test connects
-directly to that server, checks authorised library access and saves its identity.
-The server address must resolve to your local network; every address the name
-resolves to is checked, and the app does not use Plex cloud discovery or relay
-services. Searches send the query and the token only to that server, with the token
-in a header.</p>
+<p>Plex search needs the server's address and a token that you supply. You can enter
+the server's local IP address. The app then opens an encrypted connection to that
+address which carries no request and no token, checks that the server presents
+Plex's publicly trusted plex.direct certificate, and saves the server's plex.direct
+name in its place, not the certificate. Save and test connects directly to the
+server, checks authorised library access and saves its identity. The server address
+must be on your local network: a plex.direct name is reached at the address written
+in it, without a DNS lookup, every address any other name resolves to is checked,
+and the app does not use Plex cloud discovery or relay services. Searches send the
+query and the token only to that server, with the token in a header.</p>
 
-<p>Requests use HTTPS with normal certificate and hostname verification. An address
-beginning <code>http://</code> is refused and never contacted. Redirects are not
-followed.</p>
+<p>Requests use HTTPS with normal certificate and hostname verification. The token is
+never sent over plain HTTP: an address beginning <code>http://</code> with a host
+name is refused and never contacted. Redirects are not followed.</p>
 
 <p>The token can identify a Plex account or server user to the configured server.
 The owner of that server controls its request logs and their retention.</p>
