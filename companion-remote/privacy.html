@@ -308,6 +308,13 @@ Only an app signed with the same key can hold it, and it exists so that the app'
 own internal receivers accept messages from the app alone. It gives the app no
 access to anything.</p>
 
+<p>Copies installed from Google Play carry an eighth,
+<code>com.android.vending.CHECK_LICENSE</code>. Google Play adds it, together with
+a check that runs when the app opens, to confirm that the app was installed from
+Google Play; if it was not, you are asked to get it from Google Play. The check
+works through the Google Play Store app on your phone, and Google Play's own privacy
+practices apply to it. Companion Remote's own code does not use this permission.</p>
+
 <p>The app does not access your microphone, camera, contacts, files or phone
 identifiers. The app does not request Android location permission or read GPS
 location. An optional catalogue provider receives your internet address and may
