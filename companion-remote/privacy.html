@@ -50,7 +50,7 @@
 <main>
 
 <h1>Companion Remote privacy policy</h1>
-<p class="lede">Last updated 27 September 2026, for version 1.0.0.</p>
+<p class="lede">Last updated 1 October 2026, for version 1.0.0.</p>
 
 <p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
 this policy. Contact details are at the end of this page.</p>
@@ -92,9 +92,19 @@ uninstalling also erases all local recent-app lists.</p>
 
 <p>When Synchronise text input is on, the app reads the text already in the
 television's focused field so you can edit it, and each change you make is sent as
-you type. A field the television marks as secure is never read back or shown, and
-what you type into it stays in memory only while the field is selected. The app does
-not save or record text in either case.</p>
+you type. A field the television marks as secure is masked and is never prefilled
+with text read from the television. The app removes its references to secure text
+when the field loses focus or is replaced, when UI input stops, and when the
+connection or session closes. Pending edits are discarded at those boundaries and
+are not replayed on another field or connection. The runtime uses immutable
+strings, so the app cannot guarantee immediate erasure of every copy from system
+memory. The app does not save or record text in either case.</p>
+
+<p>For ordinary fields, the app can retain the current text in memory across
+refocus and reconnect so an old television report does not replace your edits.
+This text is never saved to storage. Forgetting the television, choosing another
+television, or a change in the field's secure status discards it. After a full
+session teardown, the app keeps only the field identifier, not a copy of its text.</p>
 
 <h3>The Now Playing notification</h3>
 
