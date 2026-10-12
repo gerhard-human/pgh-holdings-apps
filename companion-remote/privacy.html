@@ -50,7 +50,7 @@
 <main>
 
 <h1>Companion Remote privacy policy</h1>
-<p class="lede">Last updated 1 October 2026, for version 1.0.0.</p>
+<p class="lede">Last updated 12 October 2026, for version 1.0.0.</p>
 
 <p>Companion Remote is published by PGH Holdings (Pty) Ltd, which is responsible for
 this policy. Contact details are at the end of this page.</p>
@@ -230,11 +230,13 @@ its own privacy practices apply. The app embeds no browser and no tracking code.
 <h2>Optional Plex search on your own server</h2>
 
 <p>Plex search needs the server's address and a token that you supply. You can enter
-the server's local IP address. The app then opens an encrypted connection to that
-address which carries no request and no token, checks that the server presents
-Plex's publicly trusted plex.direct certificate, and saves the server's plex.direct
-name in its place, not the certificate. Save and test connects directly to the
-server, checks authorised library access and saves its identity. The server address
+the server's local IP address with its server code, copied from Plex Web. The app
+then opens an encrypted connection to that address which carries no request and no
+token, checks that the server presents Plex's publicly trusted plex.direct
+certificate for that server code, and saves the server's plex.direct name in its
+place, not the certificate. The token is not sent to a server whose code differs.
+Save and test connects directly to the server, checks authorised library access and
+saves its identity. The server address
 must be on your local network: a plex.direct name is reached at the address written
 in it, without a DNS lookup, every address any other name resolves to is checked,
 and the app does not use Plex cloud discovery or relay services. Searches send the
@@ -355,8 +357,8 @@ internet connection. Where the two differ, this page is the current one.</p>
 
 <h2>Third party names</h2>
 
-<p>Disney+, Netflix, Prime Video, Plex, DStv and Crunchyroll are third party names
-used descriptively as text. No provider logo, wordmark artwork or brand colour
+<p>Disney+, Netflix, Prime Video, Plex, DStv, Crunchyroll and YouTube are third party
+names used descriptively as text. No provider logo, wordmark artwork or brand colour
 is used.</p>
 
 <p>Companion Remote is an independent app and is not affiliated with, sponsored by or
